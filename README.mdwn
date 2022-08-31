@@ -1,0 +1,110 @@
+# Semi-log graph paper for stock charts
+
+This is a printable semi-log graph paper template
+for charting market prices and volumes by hand.
+The design was inspired by
+Helene Meisler's [hand-drawn stock market charts][charts].
+
+The template should to be printed onto
+US letter size paper in a portrait orientation,
+ideally using a 600 dpi laser printer,
+but can be adapted for other configurations.
+
+## Specifications
+
+The horizontal axis is linear. The major grid has 26 steps,
+each corresponding to one week in a typical stock chart.
+The minor grid further subdivides each major grid step into 6 steps;
+the 5 intervening lines can be used for
+each of the 5 trading days in a given week.
+
+The vertical axis is logarithmic. This means that a fixed distance,
+anywhere on the chart, will correspond to the same *multiple*
+no matter its vertical position.
+For example,
+the distance between 20 and 25 and
+the distance between 64 and 80
+will be the same (approximately 3.5cm in this case).
+It corresponds to a 25% increase (or 20% decrease).
+When coordinates are multiplied by a constant,
+the entire chart is shifted but not scaled.
+
+The distance from the bottom to the middle of the chart
+corresponds to a factor of 2 (a 100% increase or 50% decrease).
+The distance from the middle to the top is the same,
+and the corresponding coordinate values are again multiplied by two.
+The major grid divides each of these two sections into ten.
+The two halves are identical copies of the same grid,
+but a major step in the upper section corresponds to twice the increase
+in coordinate values compared with a major step in the lower section.
+Each major step is further subdivided into 4 steps of the minor grid.
+
+The lower chart at the bottom of the page
+uses a simple linear grid and is typically used to plot volume.
+
+## Setting up a scale
+
+The (faint) labels on the left-hand side,
+which run from 20 at the bottom to 40 in the middle to 80 at the top,
+can be helpful when choosing a scale. To set up your scale,
+choose a factor that will place the chart in a convenient position.
+
+For example, as of 2022-08-30, the S&P 500 sits at 3,986.
+Plotting it with a factor of 1/100
+will start the chart roughly in the middle (at 39.86),
+with major steps in the lower half representing 100 points
+and major steps in the upper half representing 200 points.
+
+On the other hand, today's last sale of a share of Apple Inc. (AAPL)
+was priced at $158.91.
+A factor of 1 (at 158.91) or 1/10 (at 15.89) falls outside the chart,
+but you may want to plot it with a factor of 2/10 (at 31.78),
+or perhaps 4/10 (at 63.56) if you are bearish.
+The curve will appear the same in either case,
+but will land in either the lower of upper section,
+with a major grid step corresponding to a $5 change in the price 
+in both cases.
+
+## LaTeX source code and variations
+
+The template is generated using the LaTeX package [`pgfplots`][pgfplots].
+For convenience I include both the source code (`hmgp.tex`)
+and generated PDF file (`hmgp.pdf`) in this repository.
+
+If you know how to use LaTeX, it should be fairly straightforward
+to tweak the parameters to generate graph paper templates for
+different paper sizes and orientations, scales, etc.
+If you have a particular request, please feel free to use
+the GitHub issue tracker and I may include ready-to-use versions
+of popular variations.
+
+## Acknowledgments
+
+[Helene Meisler][hm] is a veteran trader and technical analyst
+who got started before computerized stock charts were common.
+When those became more widely available, she found that
+charting by hand nevertheless gave her a better handle of
+the market's conditions, as she explains in her fascinating
+*Odd Lots* [interview][oddlots] with [Tracy Alloway][ta] and
+[Joe Weisenthal][jw].
+
+Meisler maintains a Twitter account where she regularly posts
+photographs of her hand-written charts.
+According to her, the graph paper she uses
+[stopped being manufactured][gpout] in 1989,
+so I reversed-engineered the layout from her photographs
+and adapted it to use on US letter-sized paper
+for all of you analog nerds out there.
+
+I am grateful to Meisler, Halloway and Weisenthal 
+for their great interview which led me down that path.
+
+-- Jérémie Koenig, 2022-08-31
+
+[charts]: https://www.bloomberg.com/news/articles/2022-08-24/seven-hand-drawn-helene-meisler-charts-that-explain-the-stock-market-right-now
+[oddlots]: https://www.bloomberg.com/news/articles/2022-08-25/helene-meisler-on-what-s-going-on-with-the-stock-market-now
+[pgfplots]: https://ctan.org/pkg/pgfplots
+[gpout]: https://twitter.com/hmeisler/status/1562917005836947456
+[hm]: https://twitter.com/hmeisler
+[ta]: https://twitter.com/tracyalloway
+[jw]: https://twitter.com/TheStalwart
