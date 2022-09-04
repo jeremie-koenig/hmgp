@@ -18,14 +18,15 @@ The minor grid further subdivides each major grid step into 6 steps;
 the 5 intervening lines can be used for
 each of the 5 trading days in a given week.
 
-The vertical axis is logarithmic. This means that a fixed distance,
-anywhere on the chart, will correspond to the same *multiple*
-no matter its vertical position.
+The vertical axis is logarithmic. This means that a fixed vertical distance,
+anywhere on the chart, will correspond to the same *ratio*
+no matter its position.
 For example,
 the distance between 20 and 25 and
 the distance between 64 and 80
 will be the same (approximately 3.5cm in this case).
-It corresponds to a 25% increase (or 20% decrease).
+It corresponds to a ratio of 5/4,
+that is a 25% increase or 20% decrease.
 When coordinates are multiplied by a constant,
 the entire chart is shifted but not scaled.
 
@@ -33,7 +34,7 @@ The distance from the bottom to the middle of the chart
 corresponds to a factor of 2 (a 100% increase or 50% decrease).
 The distance from the middle to the top is the same,
 and the corresponding coordinate values are again multiplied by two.
-The major grid divides each of these two sections into ten.
+The major grid divides each of these two sections into twenty steps.
 The two halves are identical copies of the same grid,
 but a major step in the upper section corresponds to twice the increase
 in coordinate values compared with a major step in the lower section.
@@ -55,15 +56,12 @@ will start the chart roughly in the middle (at 39.86),
 with major steps in the lower half representing 100 points
 and major steps in the upper half representing 200 points.
 
-On the other hand, today's last sale of a share of Apple Inc. (AAPL)
-was priced at $158.91.
+On the other hand,
+today's closing price for a share of Apple Inc. (AAPL) was $158.91.
 A factor of 1 (at 158.91) or 1/10 (at 15.89) falls outside the chart,
-but you may want to plot it with a factor of 2/10 (at 31.78),
-or perhaps 4/10 (at 63.56) if you are bearish.
-The curve will appear the same in either case,
-but will land in either the lower of upper section,
-with a major grid step corresponding to a $5 change in the price 
-in both cases.
+but you may want to plot it with a factor of 1/4 (at 39.73).
+This will have the advantage that a minor step will correspond
+to $1 in the lower section, and $2 in the upper section.
 
 ## LaTeX source code and variations
 
@@ -89,7 +87,7 @@ the market's conditions, as she explains in her fascinating
 [Joe Weisenthal][jw].
 
 Meisler maintains a Twitter account where she regularly posts
-photographs of her hand-written charts.
+photographs of her hand-drawn charts.
 According to her, the graph paper she uses
 [stopped being manufactured][gpout] in 1989,
 so I reversed-engineered the layout from her photographs
@@ -99,7 +97,7 @@ for all of you analog nerds out there.
 I am grateful to Meisler, Halloway and Weisenthal 
 for their great interview which led me down that path.
 
--- Jérémie Koenig, 2022-08-31
+-- Jérémie Koenig, 2022-09-03
 
 [charts]: https://www.bloomberg.com/news/articles/2022-08-24/seven-hand-drawn-helene-meisler-charts-that-explain-the-stock-market-right-now
 [oddlots]: https://www.bloomberg.com/news/articles/2022-08-25/helene-meisler-on-what-s-going-on-with-the-stock-market-now
